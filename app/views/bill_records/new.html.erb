@@ -1,0 +1,26 @@
+<%= form_for @bill_record do |f| %>
+  <%#= f.error_messages %>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :total_amount %><br />
+    <%= f.text_field :total_amount %>
+  </p>
+  <p>
+    <%= f.label :event_type %><br />
+    <%= f.text_field :event_type %>
+  </p>
+  <p>
+    <%= f.label :event_date %><br />
+    <%= f.text_field :event_date %>
+  </p>
+  <p>
+
+    <%= f.fields_for :paid_amounts do |ff| %>
+      <%= ff.select :user_id, User.all.collect { |p| [ p.name, p.id ] }, {}, {:multiple => true}  %>
+    <% end %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

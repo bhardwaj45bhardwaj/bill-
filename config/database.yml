@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bill_mgt_developement
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
+
